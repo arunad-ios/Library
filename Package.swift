@@ -17,7 +17,13 @@ let package = Package(
         // Targets can depend on other targets in this package and products from dependencies.
         .target(
             name: "LayoutPackage",
-            resources: [.process("Media.xcassets")]),
+            resources: [.process("Media.xcassets")]
+        ),
+        .plugin(
+                   name: "DataModel",
+                   capability: .buildTool(),
+                   dependencies: ["InventorySwiftModel"]
+               ),
         
         .testTarget(
             name: "LayoutPackageTests",
