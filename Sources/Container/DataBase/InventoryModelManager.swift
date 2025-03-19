@@ -178,8 +178,8 @@ public class CoreDataStack {
 
     private init() {
         // Load the Core Data model from the framework's bundle
-        let bundle = Bundle(for: CoreDataStack.self)
-        guard let modelURL = bundle.url(forResource: "InventorySwiftModel", withExtension: "momd") else {
+       // let bundle = Bundle(for: CoreDataStack.self)
+        guard let modelURL = Bundle.module.url(forResource: "InventorySwiftModel", withExtension: "momd") else {
             fatalError("Failed to locate Core Data model.")
         }
         guard let model = NSManagedObjectModel(contentsOf: modelURL) else {
